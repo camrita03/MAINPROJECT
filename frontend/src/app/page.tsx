@@ -195,7 +195,7 @@ export default function Home() {
           </div>
 
           {/* Ultra-Seamless Cloud Divider Layer */}
-          <div className="absolute -bottom-32 left-0 right-0 h-64 pointer-events-none z-10 overflow-hidden">
+          <div className="absolute -bottom-32 left-0 right-0 h-64 pointer-events-none z-30 overflow-hidden">
             {/* Primary Blending Gradient - Multi-stop for extreme smoothness */}
             <div className="absolute inset-x-0 bottom-0 h-full bg-linear-to-t from-white via-white via-white/80 via-white/40 to-transparent z-10" />
             

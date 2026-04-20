@@ -63,6 +63,7 @@ const UploadBox: React.FC<UploadBoxProps> = ({ onAnalyze, isLoading }) => {
           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
           onChange={handleFileChange}
           accept=".pdf,.doc,.docx"
+          suppressHydrationWarning
         />
         
         <div className="flex flex-col items-center gap-6 relative z-10">
@@ -125,6 +126,7 @@ const UploadBox: React.FC<UploadBoxProps> = ({ onAnalyze, isLoading }) => {
           onChange={(e) => setRole(e.target.value)}
           placeholder="Enter your target role (e.g., Frontend Developer, Data Analyst)"
           className="w-full px-6 py-5 rounded-[2rem] border-2 border-slate-200 bg-white/80 backdrop-blur-xl text-slate-900 font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500/10 transition-all shadow-sm"
+          suppressHydrationWarning
         />
       </div>
 
@@ -137,6 +139,7 @@ const UploadBox: React.FC<UploadBoxProps> = ({ onAnalyze, isLoading }) => {
         whileTap={{ scale: 0.99 }}
         onClick={() => file && role && onAnalyze(file, role)}
         disabled={!file || !role || isLoading}
+        suppressHydrationWarning
         className={`w-full py-6 rounded-[2.5rem] font-black text-xl tracking-tight transition-all relative overflow-hidden group
           ${file && role && !isLoading
             ? 'bg-blue-600 text-white shadow-[0_20px_40px_rgba(37,99,235,0.3)]'

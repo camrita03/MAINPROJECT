@@ -26,6 +26,7 @@ export const Button = ({
     <button
       className={`${baseStyles} ${variants[variant]} ${className}`}
       disabled={isLoading || props.disabled}
+      suppressHydrationWarning
       {...props}
     >
       {/* Shine Effect Overlay for Primary */}
