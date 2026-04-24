@@ -1,11 +1,18 @@
-const express=require("express")
-const upload = require("../middleware/uploadmiddleware")
-const {protect}=require("../middleware/authMiddleware")
-const {analyzeResume}=require("../controllers/resumeController")
+const express = require("express");
 const router = express.Router();
 
+const { uploadResume } = require("../controllers/resumeController");
+const protect = require("../middleware/authMiddleware");
+const { checkProfileComplete } = require("../middleware/flowMiddleware");
+const upload = require("../middleware/uploadmiddleware");
 
-router.post("/upload", upload.single("resume"), analyzeResume);
+// 🔥 IMPORTANT: field name must be SAME as frontend
+router.post(
+  "/upload",
+  protect,
+  checkProfileComplete,
+  upload.single("resume"),
+  uploadResume
+);
 
-
-module.exports=router
+module.exports = router;
